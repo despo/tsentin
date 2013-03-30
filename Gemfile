@@ -10,6 +10,7 @@ gem 'haml'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem 'simple_form', "~> 2.1.0"
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'devise'
 
 
 # Gems used only for assets and not required

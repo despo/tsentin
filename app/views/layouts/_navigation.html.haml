@@ -1,2 +1,17 @@
 = link_to "τσεντ.ίν", root_path, :class => 'brand'
-.navbar-text τοπικές προσφορές γιατί το τσεντίν εφκαίρωσεν
+.navbar-text.span4 τοπικές προσφορές γιατί το τσεντίν εφκαίρωσεν
+%ul.nav.pull-right
+  %li.dropdown
+    %a{ href: "#", class: "dropdown-toggle", :"data-toggle" => "dropdown"}
+      =current_user.email if user_signed_in?
+      %b.icon-user
+      %b.caret
+    %ul.dropdown-menu
+      -if user_signed_in?
+        %li= link_to "Edit Account",  edit_user_registration_path
+      - else
+        %li= link_to('Sign up', new_user_registration_path)
+      -if user_signed_in?
+        %li= link_to('Logout', destroy_user_session_path, :method=>'delete')
+      - else
+        %li= link_to('Login', new_user_session_path)
