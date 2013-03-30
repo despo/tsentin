@@ -1,0 +1,13 @@
+%legend Προσφορά
+= simple_form_for @post, html: { class: 'form-vertical' } do |f|
+  = f.error_notification 
+  = display_base_errors @post
+
+  = f.input :name, :wrapper => :prepend, :label => false do
+    = content_tag :span, t("post.name"), :class => "add-on"
+    = f.input_field :name
+
+  = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information")
+
+  .form-actions
+    = f.button 'submit', class: "btn-primary"

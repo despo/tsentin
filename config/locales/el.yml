@@ -1,0 +1,11 @@
+el:
+  post:
+    name: "Τίτλος"
+    description: "Περιγραφή"
+    information: "Πληροφορίες"
+    create: "Δημιουργία"
+
+  helpers:
+    submit:
+      post:
+        create: "Δημιουργία"

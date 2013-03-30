@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'haml'
 gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'simple_form', "~> 2.1.0"
 
 
 # Gems used only for assets and not required
