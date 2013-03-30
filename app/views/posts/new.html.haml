@@ -9,5 +9,8 @@
 
   = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information")
 
+  Seperate tags using commas
+  = f.input :tag_list, input_html:  { class:  "span6" }, label: 'Tags'
+
   .form-actions
     = f.button 'submit', class: "btn-primary"

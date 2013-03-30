@@ -9,3 +9,7 @@ el:
     submit:
       post:
         create: "Δημιουργία"
+
+  time:
+    formats:
+      default: " %^a %d-%m-%Y - %H:%M"

@@ -1,8 +1,14 @@
 =link_to 'Create', new_post_path, class: 'btn btn-primary'
 
-.posts
+.posts.row
   - @posts.each do |post|
-    .post
-      .title= post.name
-      .body= post.body
-      .description= post.description
+    .span4
+      .post
+        %legend
+          .title= post.name
+        .body= post.body
+        .description= post.description
+
+        =post.tags.map(&:name).join ", "
+
+        .creatd_at= l post.created_at
