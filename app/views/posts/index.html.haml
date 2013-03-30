@@ -11,4 +11,4 @@
 
         =post.tags.map(&:name).join ", "
 
-        .creatd_at= l post.created_at
+        .created_at= "Πρόσθεση πριν #{time_ago_in_words(post.created_at)}"
