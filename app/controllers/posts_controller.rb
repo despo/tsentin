@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :index, :show ]
 
-  before_filter :set_tags
-
   def index
     @posts = Post.all
   end
@@ -30,8 +28,4 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  private
-    def set_tags
-      @tags = Post.tag_counts_on(:tags).order('count  desc')
-    end
 end
