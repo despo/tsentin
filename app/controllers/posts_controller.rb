@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     params[:post][:tag_list].downcase!
     @post = Post.new(params[:post])
+    @post.user_id = current_user.id
     if @post.save
       redirect_to posts_path
     else
