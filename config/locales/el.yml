@@ -10,9 +10,18 @@ el:
       post:
         create: "Δημιουργία"
 
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            tag_list:
+              blank: 'Επιλέξτε τουλάχιστον μιά κατηγορία'
+            body:
+              blank: ''
   time:
     formats:
-      default: " %^a %d-%m-%Y - %H:%M"
+      default: " %d/%m/%Y - %H:%M"
 
   date:
     abbr_day_names:

@@ -18,9 +18,12 @@
     #main{:role => "main"}
       .container
         .content
-          .row
-            .span12
+          .span12
+            .row.show-grid
               = render 'layouts/messages'
-              = yield
+              .span9
+                = yield
+              .span3
+                = render 'posts/sidebar'
           %footer
 

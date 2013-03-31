@@ -1,0 +1,12 @@
+#post
+  .span6
+    .row
+      %h3.title= @post.name
+      %p.body
+        =@post.body
+    .row
+      %small.tags
+        - @post.tags.each do |t|
+          %span.label.label-warning=t.name
+    .row
+      .created_at= "Πρόστέθηκε στις #{ @post.created_at}"

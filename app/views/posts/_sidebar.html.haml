@@ -1,0 +1,17 @@
+=link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large'
+
+%br
+
+%ul.nav.nav-tabs.nav-stacked.sidebar
+  %li.title Ετικέτες
+  %li
+    %a
+      'Ολες
+      %span.badge.badge-success=@tags.length
+  - @tags.each do |tag|
+    %li.sidebar-link
+      %a
+        =tag.name
+        %span.badge.badge-error= tag.count
+
+

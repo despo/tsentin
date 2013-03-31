@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!, :except => :index
+  before_filter :authenticate_user!, :except => [ :index, :show ]
+
+  before_filter :set_tags
 
   def index
     @posts = Post.all
-    @tags = Post.tag_counts_on(:tags)
   end
 
   def create
@@ -18,4 +19,13 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  private
+    def set_tags
+      @tags = Post.tag_counts_on(:tags)
+    end
 end

@@ -3,14 +3,13 @@
   = f.error_notification 
   = display_base_errors @post
 
-  = f.input :name, :wrapper => :prepend, :label => false do
+  = f.input :name, :wrapper => :prepend, label: false do
     = content_tag :span, t("post.name"), :class => "add-on"
-    = f.input_field :name
+    = f.input_field :name, placeholder: 'π.χ. Καφενείον ο πόθος'
 
-  = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information")
+  = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information"), placeholder: 'Στους 10 καφέδες, ένας καφές και ένα κομμάτι γλύκισμα δωρεάν. ', input_html: { rows: 5 }
 
-  Seperate tags using commas
-  = f.input :tag_list, input_html:  { class:  "span6" }, label: 'Tags'
+  = f.input :tag_list, input_html:  { class:  "span6" }, label: 'Κατηγορίες', required: true, placeholder: 'π.χ. καφές, γλυκιστικά'
 
   .form-actions
     = f.button 'submit', class: "btn-primary"
