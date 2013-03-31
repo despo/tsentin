@@ -6,9 +6,15 @@ el:
     link: "Σύνδεσμος"
     create: "Δημιουργία"
 
+  sign_up: "Δημιουργία λογαριασμού"
+  sign_in: "Συνδεθείτε"
+  create: "Δημιουργία"
+
   user:
     email: "Ηλεκτρονική διέυθηνση"
     password: "Κωδικός"
+    password_confirmation: "Επιβεβαίωση κωδικού"
+
 
   helpers:
     submit:
