@@ -1,15 +1,31 @@
 =link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large'
 
 %br
+.btn-toolbar
+  .btn-group
+    %button.btn.btn-small
+      = @current_city ? @current_city.name : "Σε όλες τις πόλεις"
+    %button.btn.btn-small.dropdown-toggle{ "data-toggle" => "dropdown" }
+      %span.caret
+    %ul.dropdown-menu{ role: "menu", :"aria-labelledby" => "dropdownMenu" }
+      %li=link_to "Σε όλες τις πόλεις", posts_path unless @current_city.nil?
+      - @cities.each do |city|
+        %li
+          =link_to city.name, city_offers_path(city.name)
+
 
 %ul.nav.nav-tabs.nav-stacked.sidebar
   %li.title Ετικέτες
-  %li
-    =link_to root_path do
+  - all_tags_class = @selected_tag ? '' : 'active'
+  %li{ class: all_tags_class }
+    - all_tags_path = @current_city ? city_offers_path(@current_city.name) : root_path
+    =link_to all_tags_path do
       'Ολες
       %span.badge.badge-success=@tags.length
   - @tags.each do |tag|
-    %li.sidebar-link
-      =link_to tagged_offers_path(tag.name) do
+    - tag_class = @selected_tag.eql?(tag.name) ? 'active' : ''
+    %li.sidebar-link{ class: tag_class }
+      - tag_path =  @current_city ? tagged_city_offers_path(@current_city.name, tag.name) :  tagged_offers_path(tag.name)
+      =link_to tag_path do
         =tag.name
         %span.badge.badge-error= tag.count

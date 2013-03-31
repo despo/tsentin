@@ -5,7 +5,9 @@
         .caption.well
           =link_to offer_path(post) do
             .row
-              %h6=post.name
+              %h6
+                =post.name
+                %small.pull-right= post.city ? post.city.name : "Σε όλες τις πόλεις"
             .row
               %p.body.limit-text
                 =post.body
