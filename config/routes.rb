@@ -7,4 +7,5 @@ TsentIn::Application.routes.draw do
   resources :posts
 
   match '/offers/:id' => 'posts#show', as: :offer
+  match '/offers/tag/:tag_name' => 'posts#filter', as: :tagged_offers
 end

@@ -5,13 +5,11 @@
 %ul.nav.nav-tabs.nav-stacked.sidebar
   %li.title Ετικέτες
   %li
-    %a
+    =link_to root_path do
       'Ολες
       %span.badge.badge-success=@tags.length
   - @tags.each do |tag|
     %li.sidebar-link
-      %a
+      =link_to tagged_offers_path(tag.name) do
         =tag.name
         %span.badge.badge-error= tag.count
-
-

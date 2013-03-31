@@ -7,7 +7,13 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def filter
+    @posts = Post.tagged_with(params[:tag_name])
+    render :index
+  end
+
   def create
+    params[:post][:tag_list].downcase!
     @post = Post.new(params[:post])
     if @post.save
       redirect_to posts_path
@@ -26,6 +32,6 @@ class PostsController < ApplicationController
 
   private
     def set_tags
-      @tags = Post.tag_counts_on(:tags)
+      @tags = Post.tag_counts_on(:tags).order('count  desc')
     end
 end

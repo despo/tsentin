@@ -5,6 +5,7 @@
       %p.body
         =@post.body
     .row
+      Ετικέττες
       %small.tags
         - @post.tags.each do |t|
           %span.label.label-warning=t.name
