@@ -2,7 +2,7 @@
   - @posts.each do |post|
     .span3
       .post.thumbnail{ style: 'cursor: pointer' }
-        .caption
+        .caption.well
           =link_to offer_path(post) do
             .row
               %h6=post.name
@@ -11,7 +11,7 @@
                 =post.body
                 - if post.body and post.body.length > 180
                   ="..."
-          .row
-            %small.tags
-              - post.tags.each do |t|
-                %span.label.label-warning=t.name
+        .row
+          %small.tags.pull-right
+            - post.tags.each do |t|
+              %span.label.label-warning=t.name

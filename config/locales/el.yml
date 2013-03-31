@@ -3,6 +3,7 @@ el:
     name: "Τίτλος"
     description: "Περιγραφή"
     information: "Πληροφορίες"
+    link: "Σύνδεσμος"
     create: "Δημιουργία"
 
   helpers:

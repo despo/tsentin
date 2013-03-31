@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
 
   private
     def set_tags
-      @tags = Post.tag_counts_on(:tags).order('count  desc')
+      @tags = Post.tag_counts_on(:tags).order('count  desc', 'name asc')
     end
 end

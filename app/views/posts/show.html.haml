@@ -1,8 +1,10 @@
 #post
   .row
     %h3.title= @post.name
-    %p.body.well
-      =@post.body
+    .body.well
+      =simple_format(@post.body)
+      %br
+      =link_to @post.link
   .row.pull-right
     %small.tags
       - @post.tags.each do |t|

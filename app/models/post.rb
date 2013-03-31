@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :description, :name, :body, :tag_list
+  attr_accessible :description, :name, :body, :tag_list, :link
 
   default_scope order('created_at desc')
 
