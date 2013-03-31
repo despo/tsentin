@@ -19,7 +19,8 @@
             .row
               %small.tags.pull-right
                 - post.tags.each do |t|
-                  %span.label.label-warning=t.name
+                  %span.label.label-warning
+                    =link_to t.name, tagged_offers_path(t.name)
 
 .row
   %legend Αγαπημένες προσφορές
