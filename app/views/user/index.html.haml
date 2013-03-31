@@ -19,7 +19,7 @@
             .row
               %small.tags.pull-right
                 - post.tags.each do |t|
-                  %span.label.label-warning
+                  %span.label.label-tag
                     =link_to t.name, tagged_offers_path(t.name)
 
 .row
