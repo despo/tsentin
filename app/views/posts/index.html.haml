@@ -1,14 +1,32 @@
-=link_to 'Create', new_post_path, class: 'btn btn-primary'
+.row.show-grid
+  .span9
+    .posts.thumbnails
+      - @posts.each do |post|
+        .span3
+          .post.thumbnail{ style: 'cursor: pointer' }
+            .caption
+              .row
+                .title= post.name
+                .body= post.body
+                .description= post.description
 
-.posts.row
-  - @posts.each do |post|
-    .span4
-      .post
-        %legend
-          .title= post.name
-        .body= post.body
-        .description= post.description
+              .row
+                .tags=post.tags.map(&:name).join ", "
+                .created_at= "Πρόσθεση πριν #{time_ago_in_words(post.created_at)}"
+  .span3
+    =link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large'
 
-        =post.tags.map(&:name).join ", "
+    %br
 
-        .created_at= "Πρόσθεση πριν #{time_ago_in_words(post.created_at)}"
+    %ul.nav.nav-tabs.nav-stacked.sidebar
+      %li.title Ετικέτες
+      %li
+        %a
+          'Ολες
+          %span.badge.badge-success=@tags.length
+      - @tags.each do |tag|
+        %li.sidebar-link
+          %a
+            =tag.name
+            %span.badge.badge-error= tag.count
+

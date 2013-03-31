@@ -3,8 +3,9 @@
 %ul.nav.pull-right
   %li.dropdown
     %a{ href: "#", class: "dropdown-toggle", :"data-toggle" => "dropdown"}
-      =current_user.email if user_signed_in?
-      %b.icon-user
+      -if user_signed_in?
+        =current_user.email
+      %b.icon-cog.icon-white
       %b.caret
     %ul.dropdown-menu
       -if user_signed_in?
