@@ -6,6 +6,10 @@ el:
     link: "Σύνδεσμος"
     create: "Δημιουργία"
 
+  user:
+    email: "Ηλεκτρονική διέυθηνση"
+    password: "Κωδικός"
+
   helpers:
     submit:
       post:

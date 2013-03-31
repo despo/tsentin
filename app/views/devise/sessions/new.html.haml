@@ -1,0 +1,10 @@
+%legend Συνδεθείτε
+
+= simple_form_for resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-inline' } do |f|
+  .form-input
+    = f.input_field :email, placeholder: t("user.email"), class: 'input-medium', label: false
+    = f.input_field :password, label: false, placeholder: t("user.password"), class: 'input-medium'
+
+    = f.button :submit, "Συνδεθείτε"
+
+= render "devise/shared/links"
