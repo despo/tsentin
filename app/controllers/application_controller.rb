@@ -9,5 +9,6 @@ class ApplicationController < ActionController::Base
 
     def set_cities
       @cities = City.all
+      @current_city = City.find_by_name(params[:city_name]) if params[:city_name]
     end
 end

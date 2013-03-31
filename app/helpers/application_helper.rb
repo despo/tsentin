@@ -32,4 +32,8 @@ module ApplicationHelper
   def class_for_tag tag
     @selected_tag.eql?(tag.name) ? 'active' : ''
   end
+
+  def path_for_city city
+    @selected_tag ? tagged_city_offers_path(city.name, @selected_tag.name) :  city_offers_path(@current_tag.name)
+  end
 end
