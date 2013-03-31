@@ -1,13 +1,15 @@
 #post
   .row
-    %h3.title= @post.name
+    %h3.title
+      = @post.name
+      %small= @post.city ? @post.city.name : "Σε όλες τις πόλεις"
     .body.well
       =simple_format(@post.body)
       %br
       =link_to @post.link
   .row.pull-right
     %small.tags
-      - post.tags.each do |t|
+      - @post.tags.each do |t|
         %span.label.label-warning
           =link_to t.name, tagged_offers_path(t.name)
   .row
