@@ -6,7 +6,7 @@
     .body.well
       =simple_format(@post.body)
       %br
-      =link_to @post.link
+      =link_to @post.link, @post.link
   .row.pull-right
     %small.tags
       - @post.tags.each do |t|

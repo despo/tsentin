@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    params[:post][:tag_list].downcase!
+    sanitize_properties
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
     if @post.save
@@ -36,6 +36,19 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def missing_http? link_url
+    !URI.parse(link_url).scheme rescue false
+  end
+
+  def sanitize_properties
+    params[:post][:tag_list].downcase!
+    params[:post][:link] = "http://#{link_from(params)}" if missing_http?(link_from(params))
+  end
+
+  def link_from parameters
+    params[:post][:link]
   end
 
 end
