@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   default_scope order('posts.created_at desc')
 
-  validates_presence_of :body, :tag_list
+  validates_presence_of :body, :tag_list, :name
   belongs_to :user
   belongs_to :city
 
