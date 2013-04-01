@@ -11,10 +11,22 @@
     = csrf_meta_tags
     = yield(:head)
   %body
-    %header.navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-inverse.navbar-fixed-top
       %nav.navbar-inner
         .container
           = render 'layouts/navigation'
+    %header
+      .container
+        .row
+          .span3.offset2
+            =image_tag 'tsentin.png', class: 'img-rounded'
+
+          .span3
+            %p.lead
+              %h1
+                κυπριακές τοπικές προσφορές
+                %small γιατί το τσεντίν εφκέρωσεν
+
     #main{:role => "main"}
       .container
         .content
