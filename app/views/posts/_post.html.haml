@@ -1,6 +1,6 @@
 .span3
-  .post.thumbnail{ style: 'cursor: pointer' }
-    .caption.well
+  .post.thumbnail
+    .caption.well{ style: 'cursor: pointer' }
       =link_to offer_path(post) do
         .row
           %h6=post.name
@@ -9,6 +9,7 @@
             =post.body
             - if post.body and post.body.length > 180
               ="..."
+      =render 'posts/favorites', post: post
     .row
       %small.tags.pull-right
         - post.tags.each do |t|

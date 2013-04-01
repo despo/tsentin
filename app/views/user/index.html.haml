@@ -11,4 +11,5 @@
   -unless @favorites
     %p Δεν έχετε επιλέξει αγαπημένες προσφορές :(
   - else
-    "boo"
+    #favorites
+      = render partial: :post, collection: @favorites

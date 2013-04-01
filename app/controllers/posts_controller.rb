@@ -38,6 +38,22 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def favorite
+    begin
+      post = Post.find(params[:id])
+      favorites = Favorite.new(user: current_user, post: post)
+      if favorites.save!
+        @post = Post.find(params[:id])
+        render 'posts/favorite'
+      end
+    rescue Exception
+      head :bad_request
+    end
+
+  end
+
+  private
+
   def missing_http? link_url
     !URI.parse(link_url).scheme rescue false
   end

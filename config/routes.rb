@@ -4,7 +4,11 @@ TsentIn::Application.routes.draw do
 
   root :to => 'posts#index'
 
-  resources :posts
+  resources :posts do
+    member do
+      post 'favorite' => 'posts#favorite', as: :favorite
+    end
+  end
 
   match '/prosfora/:id' => 'posts#show', as: :offer
   match '/prosfores/etiketa/:tag_name' => 'posts#filter', as: :tagged_offers
@@ -12,4 +16,5 @@ TsentIn::Application.routes.draw do
   match '/prosfores/poli/:city_name/:tag_name' => 'posts#filter', as: :tagged_city_offers
 
   match '/logariasmos' => 'user#index', as: :my_account
+
 end

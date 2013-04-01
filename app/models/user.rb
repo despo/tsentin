@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  has_many :favorites
+  has_many :favorite_posts, through: :favorites, source: :post
+
+  def is_favorite? post
+    Favorite.exists?(user_id: self.id, post_id: post.id)
+  end
 end

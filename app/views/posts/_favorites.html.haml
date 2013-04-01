@@ -1,0 +1,6 @@
+.row{ id: "favorite#{post.id}" }
+  %small.pull-right
+    - active = current_user && current_user.is_favorite?(post) ? 'active' : ''
+    =link_to favorite_post_path(post), remote: true, method: :post, class: "favorite #{active}" do
+      %i.icon-heart
+      =post.favorites.length
