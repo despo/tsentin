@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def create
     sanitize_properties
     @post = Post.new(params[:post])
-    @post.user_id = current_user.id
+    @post.user = current_user
     if @post.save
       redirect_to posts_path
     else
