@@ -59,6 +59,7 @@ class PostsController < ApplicationController
   end
 
   def sanitize_properties
+    params[:post].delete(:city_id)  if params[:post][:city_id].empty?
     params[:post][:tag_list].downcase!
     params[:post][:link] = "http://#{link_from(params)}" if missing_http?(link_from(params))
   end
