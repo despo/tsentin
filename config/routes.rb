@@ -6,10 +6,10 @@ TsentIn::Application.routes.draw do
 
   resources :posts
 
-  match '/offers/:id' => 'posts#show', as: :offer
-  match '/offers/tag/:tag_name' => 'posts#filter', as: :tagged_offers
-  match '/offers/city/:city_name' => 'posts#filter', as: :city_offers
-  match '/offers/city/:city_name/:tag_name' => 'posts#filter', as: :tagged_city_offers
+  match '/prosfora/:id' => 'posts#show', as: :offer
+  match '/prosfores/etiketa/:tag_name' => 'posts#filter', as: :tagged_offers
+  match '/prosfores/poli/:city_name' => 'posts#filter', as: :city_offers
+  match '/prosfores/poli/:city_name/:tag_name' => 'posts#filter', as: :tagged_city_offers
 
-  match '/my_account' => 'user#index', as: :my_account
+  match '/logariasmos' => 'user#index', as: :my_account
 end
