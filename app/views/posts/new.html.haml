@@ -4,15 +4,15 @@
 
   = f.input :name, :wrapper => :prepend, label: false do
     = content_tag :span, t("post.name"), :class => "add-on"
-    = f.input_field :name, placeholder: 'π.χ. Καφενείον ο πόθος'
+    = f.input_field :name, placeholder: 'Καφενείον ο πόθος'
 
-  = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information"), placeholder: 'Στους 10 καφέδες, ένας καφές και ένα κομμάτι γλύκισμα δωρεάν. ', input_html: { rows: 5 }
+  = f.input :body, as: :text, input_html:  { class:  "span6" }, label: t("post.information"), placeholder: 'Στους 10 καφέδες, ένας καφές και ένα κομμάτι γλύκισμα δωρεάν. Μπορείτε να μας βρείτε στη Λεωφόρο Ελλάδος 999. Για περισσότερες πληροφορίες επικοινωνήστε μαζί μας στο 223333333 ', input_html: { rows: 5 }
 
   = f.input :link, label: t("post.link"), placeholder: 'http://link/to/page', input_html: { rows: 5 }
 
   = f.input :city_id, label: 'Πόλη', collection: City.all, prompt: "Επιλέξτε πόλη"
 
-  = f.input :tag_list, input_html:  { class:  "span6" }, label: 'Ετικέτες', required: true, placeholder: 'π.χ. καφές, γλυκιστικά'
+  = f.input :tag_list, input_html:  { class:  "span6" }, label: 'Ετικέτες', required: true, placeholder: 'καφές, επιδόρπιο'
 
   .form-actions
     = f.button 'submit', class: "btn-primary"
