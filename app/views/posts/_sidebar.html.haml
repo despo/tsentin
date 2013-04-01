@@ -1,4 +1,7 @@
-=link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large'
+- if current_page?(new_post_path)
+  =link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large disabled'
+- else
+  =link_to 'Προσθήκη προσφοράς', new_post_path, class: 'btn btn-primary btn-block btn-large'
 
 %br
 .btn-toolbar
