@@ -14,5 +14,7 @@
         %li= link_to "Διαχείρηση λογαριασμού",  edit_user_registration_path
         %li= link_to('Αποσύνδεση', destroy_user_session_path, :method=>'delete')
       - else
-        %li= link_to('Δημιουργία λογαριασμού', new_user_registration_path)
         %li= link_to('Συνδεθείτε', new_user_session_path)
+        %li.divider
+        %li= link_to(t('forgot_password'), new_user_password_path)
+        %li= link_to('Δημιουργία λογαριασμού', new_user_registration_path)

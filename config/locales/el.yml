@@ -8,7 +8,9 @@ el:
 
   sign_up: "Δημιουργία λογαριασμού"
   sign_in: "Συνδεθείτε"
+  forgot_password: "Ξεχάσατε τον κωδικό σας;"
   create: "Δημιουργία"
+  send_instructions: "Στείλτε μου οδηγίες"
 
   user:
     email: "Ηλεκτρονική διέυθηνση"
@@ -30,6 +32,14 @@ el:
               blank: 'Επιλέξτε τουλάχιστον μιά κατηγορία'
             body:
               blank: ''
+        user:
+          attributes:
+            email:
+              invalid: 'Ακυρη ηλεκτρονική διεύθηνση'
+              blank: "δεν γίνεται να είναι κενή"
+            password:
+              confirmation: "Επιβεβαιώστε τον κωδικό σας"
+              too_short: "Τουλάχιστον 8 χαρακτήρες"
   time:
     formats:
       default: " %d/%m/%Y - %H:%M"

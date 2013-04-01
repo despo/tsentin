@@ -1,0 +1,11 @@
+%legend= t("forgot_password")
+
+= simple_form_for resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, html: { class: 'form-horizontal' } do |f|
+
+  .form-inputs
+    = f.input :email, label: t("user.email"), :required => true, :autofocus => true
+
+  .form-actions
+    = f.button :submit, t("send_instructions")
+
+= render "devise/shared/links"
