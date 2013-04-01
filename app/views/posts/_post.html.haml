@@ -1,6 +1,8 @@
 .span3
   .post.thumbnail
     .caption.well{ style: 'cursor: pointer' }
+      .row.pull-right
+        %small=post.city_name
       =link_to offer_path(post) do
         .row
           %h6=post.name
