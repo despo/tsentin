@@ -1,0 +1,17 @@
+.span3
+  .post.thumbnail{ style: 'cursor: pointer' }
+    .caption.well
+      =link_to offer_path(post) do
+        .row
+          %h6=post.name
+        .row
+          %p.body.limit-text
+            =post.body
+            - if post.body and post.body.length > 180
+              ="..."
+    .row
+      %small.tags.pull-right
+        - post.tags.each do |t|
+          %span.label.label-tag
+            =link_to t.name, tagged_offers_path(t.name)
+
